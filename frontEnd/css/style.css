@@ -1,8 +1,75 @@
 body {
+    background-color: #f0f4f8; 
+    margin: 0%;             
+    font-family: Arial, sans-serif;
+}
+
+.presentation {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.presentation h1 {
+    
+}
+
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: green;
+    margin-bottom: 1%;
+}
+
+.navbar {
+    margin-top: 1%;
+    width: 50%;
+    margin-bottom: 1%;
+
+}
+
+.navbar ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0; 
+    margin: 0; 
+}
+
+.navbar ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(145, 210, 231);
+    transition: font-size 0.3s ease;
+}
+
+a:hover {
+    color: rgb(116, 169, 187);
+    font-size: 20px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    margin-bottom: 5%;
+}
+
+/* Estilos para formulario */
+
   font-family: Arial, sans-serif;
   margin: 30px;
   background-color: #f0f4f8;
 }
+
+
 
 h2 {
   color: #333;
