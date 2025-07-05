@@ -46,27 +46,29 @@ button:hover {
   background-color: #0056b3;
 }
 
-
+/* Estilo para la navegación */
 nav ul {
   list-style: none;
   padding: 0;
+  margin: 0 0 30px 0;
   display: flex;
-  gap: 15px;
   justify-content: center;
-  margin-bottom: 20px;
-}
-
-nav li {
-  display: inline;
+  gap: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 nav a {
   text-decoration: none;
   color: #007BFF;
   font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 5px;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  background-color: #007BFF;
+  color: white;
 }
-
