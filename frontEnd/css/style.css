@@ -1,0 +1,62 @@
+body{
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+}
+
+.presentation{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.presentation h1{
+    margin: 0 auto;
+    margin-top: 1%;
+}
+.presentation p{
+    margin: 1%;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: green;
+    margin-bottom: 1%;
+}
+
+.navbar{
+    width: 50%;
+}
+
+
+.navbar ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+.navbar ul li{
+    list-style: none;
+}
+
+
+a{
+    text-decoration: none;
+    color: rgb(145, 210, 231);
+    transition: font-size 0.3s ease;
+}
+
+a:hover{
+    color: rgb(116, 169, 187);
+    font-size: 20px;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+}
+
+img{
+    margin-bottom: 5%;
+}
