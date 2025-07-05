@@ -8,7 +8,6 @@
 <body>
     <header>
         <div class="presentation">
-            <p >Clinica X</p>
             <h1>Bienvenido a clinica X</h1>
         </div>
         <?php include_once "./frontEnd/layout/navbar.php" ?>
