@@ -7,7 +7,7 @@
 
 <body>
     <header>
-        <h2>Apartado para la creacion de productos</h2>
+        <h2>Apartado para el ingreso de nuevos pasientes</h2>
         <?php include_once  "./../layout/navbar.php" ?>
     </header>
     <form action="mostrarPacientes.php" method="POST">

@@ -4,6 +4,7 @@
 
 <body>
     <header>
+        <h2>Actualizar Informacion</h2>
         <?php include_once  "./../layout/navbar.php" ?>
     </header>
     <?php echo "Actualizar informacion" ?>
