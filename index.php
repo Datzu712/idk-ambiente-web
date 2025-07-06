@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <?php include_once "./frontEnd/layout/head.php" ?>
-
 
 <body>
     <header>
