@@ -1,0 +1,9 @@
+services:
+  php-apache:
+    build:
+      context: .
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html
+    container_name: php-local-dev
