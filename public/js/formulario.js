@@ -1,7 +1,7 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('formRegistro');
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("formRegistro");
 
-  form.addEventListener('submit', (event) => {
+  form.addEventListener("submit", (event) => {
     event.preventDefault();
 
     const datos = {
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
       edad: form.edad.value,
       sexo: form.sexo.value,
       diagnostico: form.diagnostico.value.trim(),
-      fecha: form.fecha.value
+      fecha: form.fecha.value,
     };
 
     if (!datos.nombre || !datos.diagnostico || !datos.fecha) {
@@ -17,13 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    let registros = JSON.parse(localStorage.getItem('registrosClinicos')) || [];
+    let registros = JSON.parse(localStorage.getItem("registrosClinicos")) || [];
     registros.push(datos);
-    localStorage.setItem('registrosClinicos', JSON.stringify(registros));
+    localStorage.setItem("registrosClinicos", JSON.stringify(registros));
 
     alert("Registro guardado con éxito");
     form.reset();
   });
 });
-
-
