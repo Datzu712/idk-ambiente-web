@@ -21,7 +21,6 @@ header {
   margin-top: 1%;
   width: 55%;
   margin-bottom: 1%;
-
 }
 
 .navbar ul {
@@ -65,8 +64,6 @@ margin: 30px;
 background-color: #f0f4f8;
 } */
 
-
-
 h2 {
   color: #333;
   text-align: center;
@@ -99,7 +96,7 @@ button {
   margin-top: 20px;
   padding: 10px;
   width: 100%;
-  background-color: #007BFF;
+  background-color: #007bff;
   color: white;
   border: none;
   border-radius: 5px;
@@ -126,13 +123,13 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: #007BFF;
+  color: #007bff;
   font-weight: bold;
   padding: 8px 12px;
   border-radius: 5px;
 }
 
 nav a:hover {
-  background-color: #007BFF;
+  background-color: #007bff;
   color: white;
 }
