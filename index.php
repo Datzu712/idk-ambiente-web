@@ -14,7 +14,7 @@
     </header>
     <main>
         <section>
-            <h2>Nuestros productos</h2>
+            <h2 Class="Index">Nuestros productos</h2>
             <div>
                 <img src="x" alt="placeholder">
             </div>

@@ -78,6 +78,9 @@ h2 {
   text-align: center;
 }
 
+h2.Index{
+  color:black;
+}
 form {
   background-color: white;
   padding: 20px;
