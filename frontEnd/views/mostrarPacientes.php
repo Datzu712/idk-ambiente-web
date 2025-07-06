@@ -9,6 +9,10 @@
         <?php include_once  "./../layout/navbar.php"; ?>
     </header>
 
+    <main>
+    <span> cuando hayan lo hago JAJAJ</span>
+    </main>
+
 </body>
 
 </html>
