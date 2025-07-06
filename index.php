@@ -10,6 +10,8 @@
         </div>
         <?php include_once "./frontEnd/layout/navbar.php" ?>
     </header>
+    <?php include_once "./frontEnd/layout/sidebar.php" ?>
+
     <main>
         <section>
             <h2>Nuestros productos</h2>
