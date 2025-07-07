@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Formulario de Registro Clínico</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/public/css/style.css">
 </head>
 <body>
 
@@ -40,7 +40,7 @@
     <button type="submit">Guardar Registro</button>
   </form>
 
-  <script src="/js/formulario.js"></script>
+  <script src="/public/js/formulario.js"></script>
 </body>
 </html>
 

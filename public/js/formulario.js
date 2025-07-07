@@ -17,7 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    let registros = JSON.parse(localStorage.getItem("registrosClinicos")) || [];
+    const registros =
+      JSON.parse(localStorage.getItem("registrosClinicos")) || [];
     registros.push(datos);
     localStorage.setItem("registrosClinicos", JSON.stringify(registros));
 
