@@ -6,13 +6,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const datos = {
       nombre: form.nombre.value.trim(),
+      apellidos: form.apellidos.value.trim(),
+      identificacion: form.identificacion.value.trim(),
       edad: form.edad.value,
       sexo: form.sexo.value,
+      sintomas: form.sintomas.value.trim(),
+      posibleAfliccion: form.posibleAfliccion.value.trim(),
       diagnostico: form.diagnostico.value.trim(),
       fecha: form.fecha.value,
     };
 
-    if (!datos.nombre || !datos.diagnostico || !datos.fecha) {
+    if (
+      !datos.nombre ||
+      !datos.apellidos ||
+      !datos.identificacion ||
+      !datos.edad ||
+      !datos.sexo ||
+      !datos.sintomas ||
+      !datos.posibleAfliccion ||
+      !datos.diagnostico ||
+      !datos.fecha
+    ) {
       alert("Por favor, completa todos los campos.");
       return;
     }
