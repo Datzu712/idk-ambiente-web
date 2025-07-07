@@ -13,8 +13,9 @@ class BuscarPaciente {
       alert("Por favor, ingresa la identificación a buscar.");
       return;
     }
-    const registros = JSON.parse(localStorage.getItem("registrosClinicos")) || [];
-    const paciente = registros.find(r => r.identificacion === identificacion);
+    const registros =
+      JSON.parse(localStorage.getItem("registrosClinicos")) || [];
+    const paciente = registros.find((r) => r.identificacion === identificacion);
     if (paciente) {
       alert("Paciente encontrado:\n" + JSON.stringify(paciente, null, 2));
     } else {

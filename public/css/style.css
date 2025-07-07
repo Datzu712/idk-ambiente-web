@@ -10,7 +10,6 @@ body {
   width: 100%;
 }
 
-
 header {
   display: flex;
   flex-direction: column;
@@ -22,7 +21,6 @@ header {
 .sidebar.sidebar-open ~ header {
   margin-left: 220px;
 }
-
 
 .navbar {
   margin-top: 1%;
@@ -55,7 +53,6 @@ a:hover {
   font-size: 20px;
 }
 
-
 main {
   display: flex;
   justify-content: center;
@@ -71,8 +68,8 @@ img {
   margin-bottom: 5%;
 }
 
-h1{
-  color:#ffffff;
+h1 {
+  color: #ffffff;
 }
 
 h2 {
