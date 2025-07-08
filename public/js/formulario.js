@@ -1,42 +1,28 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("formRegistro");
 
-  form.addEventListener("submit", (event) => {
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('formRegistro');
+  if (!form) return;
+  form.addEventListener('submit', function(event) {
     event.preventDefault();
-
-    const datos = {
-      nombre: form.nombre.value.trim(),
-      apellidos: form.apellidos.value.trim(),
-      identificacion: form.identificacion.value.trim(),
-      edad: form.edad.value,
-      sexo: form.sexo.value,
-      sintomas: form.sintomas.value.trim(),
-      posibleAfliccion: form.posibleAfliccion.value.trim(),
-      diagnostico: form.diagnostico.value.trim(),
-      fecha: form.fecha.value,
-    };
-
-    if (
-      !datos.nombre ||
-      !datos.apellidos ||
-      !datos.identificacion ||
-      !datos.edad ||
-      !datos.sexo ||
-      !datos.sintomas ||
-      !datos.posibleAfliccion ||
-      !datos.diagnostico ||
-      !datos.fecha
-    ) {
-      alert("Por favor, completa todos los campos.");
+    if (!form.checkValidity()) {
+      event.stopPropagation();
+      form.classList.add('was-validated');
       return;
     }
-
-    const registros =
-      JSON.parse(localStorage.getItem("registrosClinicos")) || [];
+    const inputs = form.querySelectorAll('input, select');
+    const datos = {};
+    inputs.forEach(input => {
+      if (input.name) {
+        datos[input.name] = input.value.trim();
+      }
+    });
+    const registros = JSON.parse(localStorage.getItem('registrosClinicos')) || [];
     registros.push(datos);
-    localStorage.setItem("registrosClinicos", JSON.stringify(registros));
-
-    alert("Registro guardado con éxito");
+    localStorage.setItem('registrosClinicos', JSON.stringify(registros));
+    alert('Registro guardado con éxito');
     form.reset();
+    form.classList.remove('was-validated');
   });
 });

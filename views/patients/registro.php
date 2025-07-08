@@ -15,22 +15,25 @@
     <main>
         <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/views/components/forms/form_registro_paciente.php"; ?>
     </main>
+    <!-- <script src="/public/js/sidebar.js"></script> -->
     <script src="/public/js/registroPaciente.js"></script>
     <script>
-        const sidebar = document.getElementById('sidebar');
-        const main = document.querySelector('main');
-        const header = document.querySelector('header');
-        function updateLayout() {
-            if (sidebar.classList.contains('sidebar-open')) {
-                main.style.marginLeft = '220px';
-                header.style.marginLeft = '220px';
-            } else {
-                main.style.marginLeft = '60px';
-                header.style.marginLeft = '60px';
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebar = document.getElementById('sidebar');
+            const main = document.querySelector('main');
+            const header = document.querySelector('header');
+            function updateLayout() {
+                if (sidebar.classList.contains('sidebar-open')) {
+                    main.style.marginLeft = '220px';
+                    header.style.marginLeft = '220px';
+                } else {
+                    main.style.marginLeft = '60px';
+                    header.style.marginLeft = '60px';
+                }
             }
-        }
-        document.getElementById('sidebarToggle').addEventListener('click', updateLayout);
-        window.addEventListener('DOMContentLoaded', updateLayout);
+            document.getElementById('sidebarToggle').addEventListener('click', updateLayout);
+            updateLayout();
+        });
     </script>
 </body>
 

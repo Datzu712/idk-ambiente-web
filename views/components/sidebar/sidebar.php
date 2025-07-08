@@ -9,10 +9,3 @@
         <li><a href="/views/patients/actualizarInformacion.php">Actualizar informacion</a></li>
     </ul>
 </aside>
-<script>
-    const sidebar = document.getElementById('sidebar');
-    const toggle = document.getElementById('sidebarToggle');
-    toggle.addEventListener('click', () => {
-        sidebar.classList.toggle('sidebar-open');
-    });
-</script>
