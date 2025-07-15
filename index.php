@@ -14,22 +14,11 @@
 
     <main>
         <section>
-            <h2>Nuestros productos</h2>
+            <h2>Nuestros servicios</h2>
             <div>
-                <img src="x" alt="placeholder">
+                <img src="https://vinv.ucr.ac.cr/sites/default/files/styles/logos/public/logotipos/area-item6-big.png?itok=xxRVmXIv" alt="placeholder">
             </div>
-            <div>
-                <img src="x" alt="placeholder">
-            </div>
-            <div>
-                <img src="x" alt="placeholder">
-            </div>
-            <div>
-                <img src="x" alt="placeholder">
-            </div>
-            <div>
-                <img src="x" alt="placeholder">
-            </div>
+
         </section>
     </main>
 </body>

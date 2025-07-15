@@ -1,46 +1,43 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Formulario de Registro Clínico</title>
-  <link rel="stylesheet" href="/public/css/style.css">
-</head>
+<html lang="en">
+
+<?php include_once $_SERVER['DOCUMENT_ROOT'] . "/views/components/header/head.php"; ?>
+
 <body>
+    <header>
+        <div class="presentation">
+            <h1>Creación de pacientes</h1>
+        </div>
+        <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/views/components/navbar/navbar.php"; ?>
+    </header>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="registro.html">Registrar Paciente</a></li>
-      <li><a href="consultar.html">Consultar Pacientes</a></li>
-    </ul>
-  </nav>
-
-  <h2>Formulario de Registro Clínico</h2>
-
-  <form id="formRegistro">
-    <label for="nombre">Nombre del paciente:</label>
-    <input type="text" id="nombre" name="nombre" required><br>
-
-    <label for="edad">Edad:</label>
-    <input type="number" id="edad" name="edad" required><br>
-
-    <label for="sexo">Sexo:</label>
-    <select id="sexo" name="sexo" required>
-      <option value="">Seleccione</option>
-      <option value="Masculino">Masculino</option>
-      <option value="Femenino">Femenino</option>
-    </select><br>
-
-    <label for="diagnostico">Diagnóstico:</label>
-    <input type="text" id="diagnostico" name="diagnostico" required><br>
-
-    <label for="fecha">Fecha de Ingreso:</label>
-    <input type="date" id="fecha" name="fecha" required><br>
-
-    <button type="submit">Guardar Registro</button>
-  </form>
-
-  <script src="/public/js/formulario.js"></script>
+    <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/views/components/sidebar/sidebar.php"; ?>
+    <main>
+        <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/views/components/forms/form_registro_paciente.php"; ?>
+    </main>
+    <!-- <script src="/public/js/sidebar.js"></script> -->
+    <script src="/public/js/registroPaciente.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebar = document.getElementById('sidebar');
+            const main = document.querySelector('main');
+            const header = document.querySelector('header');
+            function updateLayout() {
+                if (sidebar.classList.contains('sidebar-open')) {
+                    main.style.marginLeft = '220px';
+                    header.style.marginLeft = '220px';
+                } else {
+                    main.style.marginLeft = '60px';
+                    header.style.marginLeft = '60px';
+                }
+            }
+            document.getElementById('sidebarToggle').addEventListener('click', updateLayout);
+            updateLayout();
+        });
+    </script>
 </body>
+
 </html>
+
+
 
