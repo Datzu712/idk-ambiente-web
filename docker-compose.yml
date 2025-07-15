@@ -7,3 +7,16 @@ services:
     volumes:
       - ./:/var/www/html
     container_name: php-local-dev
+
+  mariadb:
+    image: mariadb:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: clinic
+    ports:
+      - "3306:3306"
+    volumes:
+      - proyecto-ambiente-web:/var/lib/mysql
+
+volumes:
+  proyecto-ambiente-web:

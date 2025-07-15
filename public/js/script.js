@@ -1,3 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
-  console.log(window.location.pathname);
+document.addEventListener('DOMContentLoaded', () => {
+    console.log(window.location.pathname);
 });
