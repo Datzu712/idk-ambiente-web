@@ -1,4 +1,4 @@
-<form id="formRegistro" class="needs-validation" action="" method="POST" novalidate>
+<form id="formRegistro" class="needs-validation" action="/views/patients/crearPaciente.php" method="POST" novalidate>
     <div class="mb-3">
         <label for="nombre" class="form-label">Nombre del paciente:</label>
         <input type="text" class="form-control" id="nombre" name="nombre" required>

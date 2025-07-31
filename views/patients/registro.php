@@ -22,6 +22,7 @@
             const sidebar = document.getElementById('sidebar');
             const main = document.querySelector('main');
             const header = document.querySelector('header');
+
             function updateLayout() {
                 if (sidebar.classList.contains('sidebar-open')) {
                     main.style.marginLeft = '220px';
@@ -35,9 +36,22 @@
             updateLayout();
         });
     </script>
+    <script>
+        (() => {
+            const form = document.querySelectorAll('.needs-validation')
+
+            Array.from(form).forEach(element => {
+                element.addEventListener('submit', event => {
+                    if (!element.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    element.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
 </body>
 
 </html>
-
-
-
