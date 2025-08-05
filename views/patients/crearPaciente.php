@@ -2,13 +2,14 @@
 //Datos a insertar
 $nombre = $_POST['nombre'];
 $apellidos = $_POST['apellidos'];
-$identificacion = $_POST['identificacion'];
+$identificacion = strval(strtolower(trim($_POST['identificacion'])));
 $edad = $_POST['edad'];
 $sexo = $_POST['sexo'];
 $sintomas = $_POST['sintomas'];
 $posibleAfliccion = $_POST['posibleAfliccion'];
 $dignostico = $_POST['diagnostico'];
 $fecha = $_POST['fecha'];
+
 
 //Conexión a la base de datos
 $servernombre = "db";
@@ -33,13 +34,11 @@ try {
     $stmt->bindParam(':diagnostico', $diagnostico);
     $stmt->bindParam(':fecha', $fecha);
     $stmt->execute();
-
-    header("Location: " . $exito);
+    header("Location: " . $exito . "?status=success");
     exit(); 
 
 } catch (PDOException $e) {
-    error_log("Error de base de datos en procesar_reserva.php: " . $e->getMessage());
-    exit("Ocurrió un error");
+    header("Location: " . $exito . "?status=error");
 
 } finally {
     $conn = null;
