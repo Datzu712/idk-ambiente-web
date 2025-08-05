@@ -1,18 +1,18 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('form'); 
-    const inputBusqueda = form.querySelector('input[type="search"]'); 
-    const resultadoDiv = document.getElementById('resultadoBusqueda');
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.querySelector('form')
+  const inputBusqueda = form.querySelector('input[type="search"]')
+  const resultadoDiv = document.getElementById('resultadoBusqueda')
 
-    function buscarPacientes(query) {
-        fetch(`/buscarPaciente.php?identificacion=${query}`)
-            .then(response => response.json())
-            .then(data => {
-                resultadoDiv.innerHTML = '';
+  function buscarPacientes (query) {
+    fetch(`/buscarPaciente.php?identificacion=${query}`)
+      .then((response) => response.json())
+      .then((data) => {
+        resultadoDiv.innerHTML = ''
 
-                if (data.length > 0) {
-                    const table = document.createElement('table');
-                    table.className = 'table table-striped';
-                    table.innerHTML = `
+        if (data.length > 0) {
+          const table = document.createElement('table')
+          table.className = 'table table-striped'
+          table.innerHTML = `
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -23,7 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
                             </tr>
                         </thead>
                         <tbody>
-                            ${data.map(paciente => `
+                            ${data
+                              .map(
+                                (paciente) => `
                                 <tr>
                                     <td>${paciente.identificacion}</td>
                                     <td>${paciente.nombre}</td>
@@ -33,23 +35,27 @@ document.addEventListener('DOMContentLoaded', function() {
                                         <a href="/views/patients/actualizarInformacion.php?id=${paciente.identificacion}" class="btn btn-primary btn-sm">Editar</a>
                                     </td>
                                 </tr>
-                            `).join('')}
+                            `
+                              )
+                              .join('')}
                         </tbody>
-                    `;
-                    resultadoDiv.appendChild(table);
-                } else {
-                    resultadoDiv.innerHTML = '<p class="alert alert-warning">No se encontraron pacientes.</p>';
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                resultadoDiv.innerHTML = '<p class="alert alert-danger">Ocurrió un error al realizar la búsqueda.</p>';
-            });
-    }
+                    `
+          resultadoDiv.appendChild(table)
+        } else {
+          resultadoDiv.innerHTML =
+            '<p class="alert alert-warning">No se encontraron pacientes.</p>'
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error)
+        resultadoDiv.innerHTML =
+          '<p class="alert alert-danger">Ocurrió un error al realizar la búsqueda.</p>'
+      })
+  }
 
-    inputBusqueda.addEventListener('input', (e) => {
-        buscarPacientes(e.target.value);
-    });
+  inputBusqueda.addEventListener('input', (e) => {
+    buscarPacientes(e.target.value)
+  })
 
-    buscarPacientes('');
-});
+  buscarPacientes('')
+})

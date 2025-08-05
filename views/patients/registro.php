@@ -15,7 +15,7 @@
             if (isset($_GET['status']) && $_GET['status'] === 'error') {
                 echo '<div class="alert alert-danger" role="alert">Hubo un error</div>';
             }
-            ?>
+?>
     </header>
     <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/views/components/sidebar/sidebar.php"; ?>
     <main>

@@ -1,4 +1,5 @@
 <?php
+
 header('Content-Type: application/json');
 
 $servernombre = "db";
@@ -25,4 +26,3 @@ try {
 } finally {
     $conn = null;
 }
-?>

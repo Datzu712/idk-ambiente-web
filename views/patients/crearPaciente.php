@@ -1,4 +1,5 @@
 <?php
+
 //Datos a insertar
 $nombre = $_POST['nombre'];
 $apellidos = $_POST['apellidos'];
@@ -35,7 +36,7 @@ try {
     $stmt->bindParam(':fecha', $fecha);
     $stmt->execute();
     header("Location: " . $exito . "?status=success");
-    exit(); 
+    exit();
 
 } catch (PDOException $e) {
     header("Location: " . $exito . "?status=error");
@@ -43,4 +44,3 @@ try {
 } finally {
     $conn = null;
 }
-?>
