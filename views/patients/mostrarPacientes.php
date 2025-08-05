@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,8 +14,11 @@
     <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/views/components/sidebar/sidebar.php"; ?>
 
     <main>
+
         <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/views/components/forms/form_buscar_paciente.php"; ?>
-        <div id="resultadoBusqueda"></div>
+        <div id="resultadoBusqueda">
+
+        </div>
     </main>
     <!-- <script src="/public/js/sidebar.js"></script> -->
     <script src="/public/js/buscarPaciente.js"></script>
@@ -25,6 +27,7 @@
             const sidebar = document.getElementById('sidebar');
             const main = document.querySelector('main');
             const header = document.querySelector('header');
+
             function updateLayout() {
                 if (sidebar.classList.contains('sidebar-open')) {
                     main.style.marginLeft = '220px';
@@ -37,6 +40,5 @@
             document.getElementById('sidebarToggle').addEventListener('click', updateLayout);
             updateLayout();
         });
-        
     </script>
 </body>
