@@ -1,26 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+session_start();
+require_once 'views/auth/AuthController.php';
 
-<?php include_once "./views/components/header/head.php" ?>
+$auth = new AuthController();
+$page = $_GET['page'] ?? '';
 
-<body>
-    <header>
-        <div class="presentation">
-            <h1>Bienvenido a nuestro servicio de administración clínica</h1>
-        </div>
-        <?php include_once "./views/components/navbar/navbar.php" ?>
-    </header>
-    <?php include_once "./views/components/sidebar/sidebar.php" ?>
+switch ($page) {
+    case 'login':
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $email = $_POST['email'] ?? '';
+            $password = $_POST['password'] ?? '';
+            if ($auth->login($email, $password)) {
+                header('Location: index.php');
+                exit;
+            } else {
+                $error = "Credenciales inválidas.";
+            }
+        }
+        require 'views/auth/login.php';
+        break;
 
-    <main>
-        <section>
-            <h2>Nuestros servicios</h2>
-            <div>
-                <img src="https://vinv.ucr.ac.cr/sites/default/files/styles/logos/public/logotipos/area-item6-big.png?itok=xxRVmXIv" alt="placeholder">
-            </div>
+    case 'register':
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $username = $_POST['username'] ?? '';
+            $email = $_POST['email'] ?? '';
+            $password = $_POST['password'] ?? '';
+            if ($auth->register($username, $email, $password)) {
+                header('Location: index.php?page=login');
+                exit;
+            } else {
+                $error = "Error al registrar el usuario.";
+            }
+        }
+        require 'views/auth/register.php';
+        break;
 
-        </section>
-    </main>
-</body>
+    case 'logout':
+        $auth->logout();
+        break;
 
-</html>
+    default:
+        if (!$auth->isLoggedIn()) {
+            require 'views/welcome.php';
+        } else {
+            require 'views/layout/dashboard.php';
+        }
+        break;
+}
