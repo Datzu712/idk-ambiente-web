@@ -18,7 +18,6 @@
 })()
 
 document.addEventListener('DOMContentLoaded', function () {
-  // --- Lógica del Sidebar ---
   const sidebar = document.getElementById('sidebar')
   const main = document.querySelector('main')
   const header = document.querySelector('header')
@@ -35,9 +34,5 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  const sidebarToggle = document.getElementById('sidebarToggle')
-  if (sidebarToggle) {
-    sidebarToggle.addEventListener('click', updateLayout)
-  }
   updateLayout()
 })
