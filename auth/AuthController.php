@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/views/auth/User.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/auth/User.php';
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
