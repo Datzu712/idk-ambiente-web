@@ -29,13 +29,8 @@
         
         <div class="row justify-content-center mb-4">
             <div class="col-12 col-md-3 mb-3">
-                <a href="/views/patients/registro.php" class="btn btn-primary btn-lg w-100 shadow-sm">
-                    <i class="bi bi-person-plus-fill me-2"></i> Registrar Paciente
-                </a>
-            </div>
-            <div class="col-12 col-md-3 mb-3">
-                <a href="/views/patients/mostrarPacientes.php" class="btn btn-success btn-lg w-100 shadow-sm">
-                    <i class="bi bi-list-ul me-2"></i> Mostrar Pacientes
+                <a href="/views/contacto.php" class="btn btn-primary btn-lg w-100 shadow-sm">
+                    <i class="bi bi-person-plus-fill me-2"></i> Conatcto
                 </a>
             </div>
         </div>
