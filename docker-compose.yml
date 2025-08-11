@@ -12,8 +12,11 @@ services:
     container_name: mysql-db
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: "1234" 
-      MYSQL_DATABASE: idk_ambiente_web 
+
+      MYSQL_ROOT_PASSWORD: "1234"
+      MYSQL_DATABASE: idk_ambiente_web
+      MYSQL_USER: usuario
+      MYSQL_PASSWORD: clave
     volumes:
       - db_data:/var/lib/mysql
       - ./db:/docker-entrypoint-initdb.d

@@ -1,26 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<?php include_once "./views/components/header/head.php" ?>
+session_start();
+require_once __DIR__ . '/auth/AuthController.php';
 
-<body>
-    <header>
-        <div class="presentation">
-            <h1>Bienvenido a nuestro servicio de administración clínica</h1>
-        </div>
-        <?php include_once "./views/components/navbar/navbar.php" ?>
-    </header>
-    <?php include_once "./views/components/sidebar/sidebar.php" ?>
+$auth = new AuthController();
+$page = $_GET['page'] ?? '';
 
-    <main>
-        <section>
-            <h2>Nuestros servicios</h2>
-            <div>
-                <img src="https://vinv.ucr.ac.cr/sites/default/files/styles/logos/public/logotipos/area-item6-big.png?itok=xxRVmXIv" alt="placeholder">
-            </div>
+switch ($page) {
+    case 'login':
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $email = trim($_POST['email'] ?? '');
+            $password = trim($_POST['password'] ?? '');
+            if ($auth->login($email, $password)) {
+                $_SESSION['success'] = "Bienvenido, has iniciado sesión.";
+                header('Location: index.php');
+                exit;
+            } else {
+                $error = "Credenciales inválidas.";
+            }
+        }
+        require __DIR__ . '/auth/login.php';
+        break;
 
-        </section>
-    </main>
-</body>
+    case 'register':
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $username = trim($_POST['username'] ?? '');
+            $email = trim($_POST['email'] ?? '');
+            $password = trim($_POST['password'] ?? '');
+            if ($auth->register($username, $email, $password)) {
+                $_SESSION['success'] = "Registro exitoso. Inicia sesión.";
+                header('Location: index.php?page=login');
+                exit;
+            } else {
+                $error = "Error al registrar el usuario.";
+            }
+        }
+        require __DIR__ . '/auth/register.php';
+        break;
 
-</html>
+    case 'logout':
+        $auth->logout();
+        header('Location: index.php');
+        exit;
+
+    case 'pacientes':
+        if (!$auth->isLoggedIn()) {
+            header('Location: index.php?page=login');
+            exit;
+        }
+        require __DIR__ . '/patients/views/pacientes.php';
+        break;
+
+    case 'citas':
+        if (!$auth->isLoggedIn()) {
+            header('Location: index.php?page=login');
+            exit;
+        }
+        require __DIR__ . '/citas/views/mostrarCitas.php';
+        break;
+    case 'recetas':
+        if (!$auth->isLoggedIn()) {
+            header('Location: index.php?page=login');
+            exit;
+        }
+        require __DIR__ . '/citas/views/mostrarRecetas.php';
+        break;
+    case 'vacunas':
+        if (!$auth->isLoggedIn()) {
+            header('Location: index.php?page=login');
+            exit;
+        }
+        require __DIR__ . '/vacunas/views/mostrarVacunas.php';
+        break;
+    default:
+        if (!$auth->isLoggedIn()) {
+            require __DIR__ . '/views/welcome.php';
+        } else {
+            require __DIR__ . '/views/dashboard.php';
+        }
+        break;
+}
