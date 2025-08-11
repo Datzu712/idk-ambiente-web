@@ -10,10 +10,10 @@
             <a class="nav-link text-white" href="/">Inicio</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white" href="/patients/views/pacientes.php">Registrar Paciente</a>
+            <a class="nav-link text-white" href="/patients/views/pacientes.php">Pacientes</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white" href="/views/patients/citas.php">Registrar cita</a>
+            <a class="nav-link text-white" href="/citas/views/mostrarCitas.php">Citas</a>
         </li>
     </ul>
 </aside>

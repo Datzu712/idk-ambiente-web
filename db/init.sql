@@ -20,3 +20,12 @@ CREATE TABLE pacientes (
     diagnostico TEXT,
     fecha_ingreso DATE NOT NULL
 );
+
+CREATE TABLE citas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_paciente VARCHAR(100),
+    fecha DATE,
+    hora TIME,
+    estado ENUM('pendiente', 'confirmada', 'cancelada') DEFAULT 'pendiente',
+    nombre_usuario VARCHAR(100)
+);

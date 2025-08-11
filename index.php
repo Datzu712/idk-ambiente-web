@@ -55,7 +55,7 @@ switch ($page) {
             header('Location: index.php?page=login');
             exit;
         }
-        require __DIR__ . '/views/patients/citas.php';
+        require __DIR__ . '/citas/views/mostrarCitas.php';
         break;
 
     default:
