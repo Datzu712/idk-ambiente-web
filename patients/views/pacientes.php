@@ -16,8 +16,8 @@
 
                 <?php
                 include_once __DIR__ . "/form_registro_paciente.php";
-                include_once __DIR__ . "/form_actualizar_paciente.php";
-                ?>
+include_once __DIR__ . "/form_actualizar_paciente.php";
+?>
                 <table id="tablaPacientes" class="table table-striped table-bordered">
                     <thead>
                         <tr>
