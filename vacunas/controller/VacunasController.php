@@ -1,4 +1,5 @@
 <?php
+
 require_once $_SERVER['DOCUMENT_ROOT'] . '/vacunas/model/VacunasModel.php';
 
 $method = $_SERVER['REQUEST_METHOD'];

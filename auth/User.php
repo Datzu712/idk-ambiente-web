@@ -1,14 +1,18 @@
 <?php
+
 require_once $_SERVER['DOCUMENT_ROOT'] . '/config/db.php';
 
-class User {
+class User
+{
     private $conn;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->conn = Database::connect();
     }
 
-    public function register($username, $email, $password) {
+    public function register($username, $email, $password)
+    {
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
         $sql = "INSERT INTO users (username, email, password) VALUES (:username, :email, :password)";
         $stmt = $this->conn->prepare($sql);
@@ -19,7 +23,8 @@ class User {
         ]);
     }
 
-    public function login($email, $password) {
+    public function login($email, $password)
+    {
         $sql = "SELECT * FROM users WHERE email = :email";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute([':email' => $email]);

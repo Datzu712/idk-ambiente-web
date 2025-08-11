@@ -10,10 +10,10 @@
                 <h2 class="text-center mt-4">Listado de Vacunas</h2>
 
             <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modalRegistroVacuna">Registrar Vacuna</button>
-            <?php 
+            <?php
                 include_once __DIR__ . "/form_registro_vacunas.php";
-                include_once __DIR__ . "/form_actualizar_vacunas.php";
-            ?>
+include_once __DIR__ . "/form_actualizar_vacunas.php";
+?>
             <table id="tablaVacunas" class="table table-striped table-bordered" style="width:100%">
                 <thead>
                     <tr>

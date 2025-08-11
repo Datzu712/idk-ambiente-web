@@ -1,7 +1,10 @@
 <?php
-class Database {
-    public static function connect() {
-        $host = 'db'; 
+
+class Database
+{
+    public static function connect()
+    {
+        $host = 'db';
         $dbname = 'idk_ambiente_web';
         $username = 'usuario';
         $password = 'clave';

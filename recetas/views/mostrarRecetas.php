@@ -13,10 +13,10 @@
                     <i class="bi bi-person-plus-fill"></i> Registrar receta
                 </button>
 
-                <?php 
+                <?php
                   include_once __DIR__ . "/form_registro_Recetas.php";
-                  include_once __DIR__ . "/form_actualizar_Recetas.php";
-                ?>
+include_once __DIR__ . "/form_actualizar_Recetas.php";
+?>
                 <table id="tablaRecetas" class="table table-striped table-bordered w-100">
                     <thead>
                         <tr>

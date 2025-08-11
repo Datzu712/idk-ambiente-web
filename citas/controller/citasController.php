@@ -1,4 +1,5 @@
 <?php
+
 require_once $_SERVER['DOCUMENT_ROOT'] . '/citas/model/CitaModel.php';
 
 header('Content-Type: application/json');
