@@ -17,7 +17,7 @@
   });
 })();
 
-document.getElementById('formRegistroCita').addEventListener('submit', function (e) {
+document.getElementById('modalRegistroReceta').addEventListener('submit', function (e) {
   e.preventDefault();
 
   if (!this.checkValidity()) {
@@ -46,7 +46,7 @@ document.getElementById('formRegistroCita').addEventListener('submit', function 
     });
 });
 
-document.querySelector('#tablaCitas tbody').addEventListener('click', function (e) {
+document.getElementById('tablaCitas').addEventListener('click', function (e) {
   if (e.target.classList.contains('btn-editar')) {
     const id = e.target.getAttribute('data-id');
 

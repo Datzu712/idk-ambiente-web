@@ -15,5 +15,8 @@
         <li class="nav-item">
             <a class="nav-link text-white" href="/citas/views/mostrarCitas.php">Citas</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link text-white" href="/recetas/views/mostrarRecetas.php">Recetas</a>
+        </li>
     </ul>
 </aside>

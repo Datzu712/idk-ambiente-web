@@ -11,5 +11,8 @@
 <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
 
 <!-- Tu JS personalizado -->
-<script src="/public/js/PacientesTable.js"></script>
+<script src="/public/js/citas/citas.js"></script>
+<script src="/public/js/citas/CitasTable.js"></script>
+<script src="/public/js/recetas.js"></script>
 <script src="/public/js/pacientes.js"></script>
+<script src="/public/js/script.js"></script>

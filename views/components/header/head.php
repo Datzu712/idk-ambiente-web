@@ -12,6 +12,4 @@
   <!-- DataTables CSS -->
   <link href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
 
-  <!-- Tu CSS personalizado -->
-  <link href="/public/css/styles.css" rel="stylesheet" />
 </head>

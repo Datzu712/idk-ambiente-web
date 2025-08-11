@@ -29,3 +29,14 @@ CREATE TABLE citas (
     estado ENUM('pendiente', 'confirmada', 'cancelada') DEFAULT 'pendiente',
     nombre_usuario VARCHAR(100)
 );
+
+CREATE TABLE recetas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_paciente VARCHAR(100) NOT NULL,
+    nombre_medico VARCHAR(100) NOT NULL,
+    medicamento VARCHAR(255) NOT NULL,
+    dosis VARCHAR(100) NOT NULL,
+    frecuencia VARCHAR(100) NOT NULL,
+    fecha DATE NOT NULL,
+    observaciones TEXT
+);

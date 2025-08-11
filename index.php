@@ -57,6 +57,13 @@ switch ($page) {
         }
         require __DIR__ . '/citas/views/mostrarCitas.php';
         break;
+    case 'recetas':
+        if (!$auth->isLoggedIn()) {
+            header('Location: index.php?page=login');
+            exit;
+        }
+        require __DIR__ . '/citas/views/mostrarRecetas.php';
+        break;
 
     default:
         if (!$auth->isLoggedIn()) {
