@@ -1,4 +1,3 @@
-<!-- Modal Registro Paciente -->
 <div class="modal fade" id="modalRegistroPaciente" tabindex="-1" aria-labelledby="modalRegistroPacienteLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
