@@ -1,23 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const tabla = $('#tablaRecetas').DataTable({
+    const tabla = $('#tablaVacunas').DataTable({
         ajax: {
-            url: '/recetas/controller/RecetasController.php?action=listar',
+            url: '/vacunas/controller/VacunasController.php?action=listar',
             dataSrc: ''
         },
         columns: [
             { data: 'id' },
             { data: 'nombre_paciente' },
-            { data: 'nombre_medico' },
-            { data: 'medicamento' },
+            { data: 'nombre_vacuna' },
+            { data: 'fecha_aplicacion' },
             { data: 'dosis' },
-            { data: 'frecuencia' },
-            { data: 'fecha' },
             { data: 'observaciones' },
             {
                 data: null,
                 render: function (data, type, row) {
                     return `
-                        <button class="btn btn-primary btn-sm btn-editar" data-id="${row.id}" data-bs-toggle="modal" data-bs-target="#modalActualizarReceta">Actualizar</button>
+                        <button class="btn btn-primary btn-sm btn-editar" data-id="${row.id}" data-bs-toggle="modal" data-bs-target="#modalActualizarVacuna">Actualizar</button>
                         <button class="btn btn-danger btn-sm btn-eliminar" data-id="${row.id}">Eliminar</button>
                     `;
                 }
@@ -25,10 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
     });
 
-    // Editar receta 
-    $('#tablaRecetas tbody').on('click', '.btn-editar', function () {
+    // Editar vacuna 
+    $('#tablaVacunas tbody').on('click', '.btn-editar', function () {
         const id = $(this).data('id');
-        fetch(`/recetas/controller/RecetasController.php?action=obtener&id=${id}`)
+        fetch(`/vacunas/controller/VacunasController.php?action=obtener&id=${id}`)
             .then(res => res.json())
             .then(data => {
                 if (data.error) {
@@ -37,17 +35,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 $('#idUpd').val(data.id);
                 $('#nombre_pacienteUpd').val(data.nombre_paciente);
-                $('#nombre_medicoUpd').val(data.nombre_medico);
-                $('#medicamentoUpd').val(data.medicamento);
+                $('#nombre_vacunaUpd').val(data.nombre_vacuna);
+                $('#fecha_aplicacionUpd').val(data.fecha_aplicacion);
                 $('#dosisUpd').val(data.dosis);
-                $('#frecuenciaUpd').val(data.frecuencia);
-                $('#fechaUpd').val(data.fecha);
                 $('#observacionesUpd').val(data.observaciones);
             });
     });
 
-    // Actualizar receta
-    $('#formActualizarReceta').on('submit', function (e) {
+    // Actualizar vacuna
+    $('#formActualizarVacuna').on('submit', function (e) {
         e.preventDefault();
 
         if (!this.checkValidity()) {
@@ -59,29 +55,29 @@ document.addEventListener('DOMContentLoaded', () => {
         const formData = new FormData(this);
         formData.append('action', 'actualizar');
 
-        fetch('/recetas/controller/RecetasController.php', {
+        fetch('/vacunas/controller/VacunasController.php', {
             method: 'POST',
             body: formData
         })
         .then(res => res.json())
         .then(resp => {
             if (resp.success) {
-                const modalEl = document.getElementById('modalActualizarReceta');
+                const modalEl = document.getElementById('modalActualizarVacuna');
                 const modalInstance = bootstrap.Modal.getInstance(modalEl);
                 if (modalInstance) modalInstance.hide();
 
                 tabla.ajax.reload(null, false);
-                alert('Receta actualizada con éxito');
+                alert('Vacuna actualizada con éxito');
                 this.classList.remove('was-validated');
             } else {
-                alert('Error al actualizar receta');
+                alert('Error al actualizar vacuna');
             }
         })
         .catch(() => alert('Error en la conexión'));
     });
 
-    // Crear receta
-    $('#formRegistroReceta').on('submit', function (e) {
+    // Crear vacuna
+    $('#formRegistroVacuna').on('submit', function (e) {
         e.preventDefault();
 
         if (!this.checkValidity()) {
@@ -93,40 +89,40 @@ document.addEventListener('DOMContentLoaded', () => {
         const formData = new FormData(this);
         formData.append('action', 'crear');
 
-        fetch('/recetas/controller/RecetasController.php', {
+        fetch('/vacunas/controller/VacunasController.php', {
             method: 'POST',
             body: formData
         })
         .then(res => res.json())
         .then(resp => {
             if (resp.success) {
-                const modalEl = document.getElementById('modalRegistroReceta');
+                const modalEl = document.getElementById('modalRegistroVacuna');
                 const modalInstance = bootstrap.Modal.getInstance(modalEl);
                 if (modalInstance) modalInstance.hide();
 
                 tabla.ajax.reload(null, false);
-                alert('Receta creada con éxito');
+                alert('Vacuna creada con éxito');
                 this.reset();
                 this.classList.remove('was-validated');
             } else {
-                alert('Error al crear receta');
+                alert('Error al crear vacuna');
             }
         })
         .catch(() => alert('Error en la conexión'));
     });
 
-    // Eliminar receta
-    $('#tablaRecetas tbody').on('click', '.btn-eliminar', function () {
+    // Eliminar vacuna
+    $('#tablaVacunas tbody').on('click', '.btn-eliminar', function () {
         const id = $(this).data('id');
-        if (confirm('¿Seguro que quieres eliminar esta receta?')) {
-            fetch(`/recetas/controller/RecetasController.php?action=eliminar&id=${id}`)
+        if (confirm('¿Seguro que quieres eliminar esta vacuna?')) {
+            fetch(`/vacunas/controller/VacunasController.php?action=eliminar&id=${id}`)
             .then(res => res.json())
             .then(resp => {
                 if (resp.success) {
                     tabla.ajax.reload(null, false);
-                    alert('Receta eliminada');
+                    alert('Vacuna eliminada');
                 } else {
-                    alert('Error al eliminar receta');
+                    alert('Error al eliminar vacuna');
                 }
             });
         }

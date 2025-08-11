@@ -1,4 +1,3 @@
-
 (() => {
   const forms = document.querySelectorAll('.needs-validation');
 
@@ -17,7 +16,8 @@
   });
 })();
 
-document.getElementById('modalRegistroReceta').addEventListener('submit', function (e) {
+
+document.getElementById('formRegistroCita').addEventListener('submit', function (e) {
   e.preventDefault();
 
   if (!this.checkValidity()) {

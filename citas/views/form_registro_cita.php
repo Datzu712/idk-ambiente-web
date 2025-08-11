@@ -1,4 +1,3 @@
-<!-- Modal Registro Cita -->
 <div class="modal fade" id="modalRegistroCita" tabindex="-1" aria-labelledby="modalRegistroCitaLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content">

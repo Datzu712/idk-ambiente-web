@@ -61,5 +61,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/config/db.php';
     <script src="/public/js/citas/CitasTable.js"></script>
     <script src="/public/js/citas/citas.js"></script>
 
+
 </body>
 </html>

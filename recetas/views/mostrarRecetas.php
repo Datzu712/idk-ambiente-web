@@ -17,23 +17,23 @@
                   include_once __DIR__ . "/form_registro_Recetas.php";
                   include_once __DIR__ . "/form_actualizar_Recetas.php";
                 ?>
-
                 <table id="tablaRecetas" class="table table-striped table-bordered w-100">
                     <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Paciente</th>
-                        <th>Médico</th>
-                        <th>Medicamento</th>
-                        <th>Dosis</th>
-                        <th>Frecuencia</th>
-                        <th>Fecha</th>
-                        <th>Observaciones</th>
-                        <th>Acciones</th>
-                    </tr>
+                        <tr>
+                            <th>ID</th>
+                            <th>Paciente</th>
+                            <th>Médico</th>
+                            <th>Medicamento</th>
+                            <th>Dosis</th>
+                            <th>Frecuencia</th>
+                            <th>Fecha</th>
+                            <th>Observaciones</th>
+                            <th>Acciones</th>
+                        </tr>
                     </thead>
                     <tbody></tbody>
                 </table>
+                </div>
             </div>
         </div>
 

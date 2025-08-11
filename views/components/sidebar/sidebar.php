@@ -18,5 +18,8 @@
         <li class="nav-item">
             <a class="nav-link text-white" href="/recetas/views/mostrarRecetas.php">Recetas</a>
         </li>
+                <li class="nav-item">
+            <a class="nav-link text-white" href="/vacunas/views/mostrarVacunas.php">Vacunas</a>
+        </li>
     </ul>
 </aside>

@@ -64,7 +64,13 @@ switch ($page) {
         }
         require __DIR__ . '/citas/views/mostrarRecetas.php';
         break;
-
+    case 'vacunas':
+        if (!$auth->isLoggedIn()) {
+            header('Location: index.php?page=login');
+            exit;
+        }
+        require __DIR__ . '/vacunas/views/mostrarVacunas.php';
+        break;
     default:
         if (!$auth->isLoggedIn()) {
             require __DIR__ . '/views/welcome.php';

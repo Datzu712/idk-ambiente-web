@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     alert(data.error);
                     return;
                 }
-                // Llenar formulario actualizar
                 $('#idUpd').val(data.id);
                 $('#nombreUpd').val(data.nombre);
                 $('#apellidosUpd').val(data.apellidos);
@@ -44,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     });
 
-    // Enviar formulario actualizar via fetch
+    // Enviar formulario actualizar 
     $('#formActualizar').on('submit', function (e) {
         e.preventDefault();
 

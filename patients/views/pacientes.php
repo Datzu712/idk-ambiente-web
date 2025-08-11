@@ -17,21 +17,19 @@
                   include_once __DIR__ . "/form_registro_paciente.php";
                   include_once __DIR__ . "/form_actualizar_paciente.php";
                 ?>
-
-                <div class="table-responsive">
-                    <table id="tablaPacientes" class="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nombre</th>
-                                <th>Apellidos</th>
-                                <th>Diagnóstico</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                </div>
+                <table id="tablaPacientes" class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                            <th>Diagnóstico</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                    
             </div>
         </div>
     </main>

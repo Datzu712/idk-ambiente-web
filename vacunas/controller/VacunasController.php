@@ -1,30 +1,28 @@
 <?php
-header('Content-Type: application/json; charset=utf-8');
-
-require_once $_SERVER['DOCUMENT_ROOT'] . '/recetas/model/Receta.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/vacunas/model/VacunasModel.php';
 
 $method = $_SERVER['REQUEST_METHOD'];
 
 if ($method === 'GET') {
     if (isset($_GET['action']) && $_GET['action'] === 'listar') {
-        $recetas = getRecetas();
-        echo json_encode($recetas);
+        $vacunas = getVacunas();
+        echo json_encode($vacunas);
         exit;
     }
 
     if (isset($_GET['action']) && $_GET['action'] === 'obtener' && isset($_GET['id'])) {
-        $receta = getRecetaById($_GET['id']);
-        if ($receta) {
-            echo json_encode($receta);
+        $vacuna = getVacunaById($_GET['id']);
+        if ($vacuna) {
+            echo json_encode($vacuna);
         } else {
             http_response_code(404);
-            echo json_encode(['error' => 'Receta no encontrada']);
+            echo json_encode(['error' => 'Vacuna no encontrada']);
         }
         exit;
     }
 
     if (isset($_GET['action']) && $_GET['action'] === 'eliminar' && isset($_GET['id'])) {
-        $exito = eliminarReceta($_GET['id']);
+        $exito = eliminarVacuna($_GET['id']);
         echo json_encode(['success' => $exito]);
         exit;
     }
@@ -34,13 +32,13 @@ if ($method === 'POST') {
     $action = $_POST['action'] ?? '';
 
     if ($action === 'crear') {
-        $exito = crearReceta($_POST);
+        $exito = crearVacuna($_POST);
         echo json_encode(['success' => $exito]);
         exit;
     }
 
     if ($action === 'actualizar' && isset($_POST['id'])) {
-        $exito = actualizarReceta($_POST['id'], $_POST);
+        $exito = actualizarVacuna($_POST['id'], $_POST);
         echo json_encode(['success' => $exito]);
         exit;
     }

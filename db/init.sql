@@ -40,3 +40,13 @@ CREATE TABLE recetas (
     fecha DATE NOT NULL,
     observaciones TEXT
 );
+
+CREATE TABLE vacunas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_paciente VARCHAR(100) NOT NULL,
+    nombre_vacuna VARCHAR(100) NOT NULL,
+    fecha_aplicacion DATE NOT NULL,
+    dosis VARCHAR(50) NOT NULL,
+    observaciones TEXT,
+    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
