@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const tabla = $('#tablaRecetas').DataTable({
     ajax: {
-      url: '/recetas/controller/RecetasController.php?action=listar',
+      url: '/recetas/controller/recetasController.php?action=listar',
       dataSrc: ''
     },
     columns: [
