@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/views/components/header/head.php"; ?>
+
 <body>
     <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/views/components/sidebar/sidebar.php"; ?>
 
@@ -14,9 +15,9 @@
                 </button>
 
                 <?php
-                  include_once __DIR__ . "/form_registro_paciente.php";
-include_once __DIR__ . "/form_actualizar_paciente.php";
-?>
+                include_once __DIR__ . "/form_registro_paciente.php";
+                include_once __DIR__ . "/form_actualizar_paciente.php";
+                ?>
                 <table id="tablaPacientes" class="table table-striped table-bordered">
                     <thead>
                         <tr>
@@ -29,7 +30,7 @@ include_once __DIR__ . "/form_actualizar_paciente.php";
                     </thead>
                     <tbody></tbody>
                 </table>
-                    
+
             </div>
         </div>
     </main>
@@ -37,4 +38,5 @@ include_once __DIR__ . "/form_actualizar_paciente.php";
     <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/views/components/footer/footer.php"; ?>
 
 </body>
+
 </html>
